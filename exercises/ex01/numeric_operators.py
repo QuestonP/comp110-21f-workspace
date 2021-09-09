@@ -1,4 +1,5 @@
 """Program that demonstrates the properties of the operaters in python."""
+__author__ = "730396223"
 
 age: str = str(input("How old are you? "))
 height: str = str(input("How tall are you in inches? "))

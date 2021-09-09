@@ -1,4 +1,5 @@
-"""A program taking input and using them to demonstrate relational operators"""
+"""A program taking input and using them to demonstrate relational operators."""
+__author__ = "730396223"
 
 age: str = str(input("How old are you? "))
 height: str = str(input("How tall are you in inches? "))

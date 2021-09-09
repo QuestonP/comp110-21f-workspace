@@ -1,5 +1,6 @@
 # TODO: Write docstring here
 """A program that will boost our morale and make us feel awesome."""
+__author__ = "730396223"
 
 # TODO: Initialize __author__ variable here
 name: str = input("What is your name? ")
