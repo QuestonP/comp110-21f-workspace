@@ -10,13 +10,13 @@ heels: str = "HEELS"
 
 number: int = int(input("Enter an int "))
 if(number % 2 == 0 and number % 7 == 0):
-    print(tar + heels)
+    print('tarheels')
 else:
     if(number % 2 == 0):
-        print(tar)
+        print('tar')
     else:
         if(number % 7 == 0):
-            print(heels)
+            print('heels')
         else:
             if(number % 2 != 0 or number % 7 != 0):
-                print(carolina)
+                print('carolina')

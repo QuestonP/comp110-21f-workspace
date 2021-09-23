@@ -10,7 +10,7 @@ trees: str = ""
 x: int = 1
 while(x <= count):
     y: int = 0
-    while(y < x):
+    while(y <= x):
         trees = trees + TREE
         print(trees)
         y = y + x
