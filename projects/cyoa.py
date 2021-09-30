@@ -1,7 +1,8 @@
 """My mini game adventure game project"""
 
-
 from random import randint
+__author__ = '730396223'
+
 
 player: str = ""
 DOOR: str = '\U0001f6aa'
