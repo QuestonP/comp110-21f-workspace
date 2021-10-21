@@ -16,9 +16,10 @@ def only_evens(xs: list[int]) -> list[int]:
 def sub(xs: list[int], a: int, b: int) -> list[int]:
     new: list[int] = list()
     i: int = a
-    while i < b:
-        new.append(xs[i])
-        i += 1
+    if a <= 0 or a > 0:
+        while i < b:
+            new.append(xs[i])
+            i += 1
     return new
 
 
