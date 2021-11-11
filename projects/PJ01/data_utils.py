@@ -1,7 +1,7 @@
 """Utility functions."""
 
 from csv import DictReader
-__author__ = "123456789"
+__author__ = "730396223"
 
 # Define your functions below
 """Some helpful utility functions for CSV Files."""
@@ -55,6 +55,7 @@ def head(ds: dict[str, list[str]], p: int) -> dict[str, list[str]]:
 
 
 def select(ds: dict[str, list[str]], xs: list[str]) -> dict[str, list[str]]:
+    """Narrows down the data making a smaller subset of the values."""
     result: dict[str, list[str]] = {}
     i: int = 0
     for keys in xs:
@@ -65,6 +66,7 @@ def select(ds: dict[str, list[str]], xs: list[str]) -> dict[str, list[str]]:
 
 
 def concat(xs: dict[str, list[str]], ds: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Adds two lists together."""
     result: dict[str, list[str]] = {}
     for keys in xs:
         result[keys] = xs[keys]
@@ -80,6 +82,7 @@ def concat(xs: dict[str, list[str]], ds: dict[str, list[str]]) -> dict[str, list
 
 
 def count(xs: list[str]) -> dict[str, int]:
+    """Counts the number of times a value int the data is present."""
     result: dict[str, int] = {}
 
     for names in xs:
@@ -87,5 +90,39 @@ def count(xs: list[str]) -> dict[str, int]:
             result[names] = 1
         else:
             result[names] += 1
+
+    return result
+
+
+def col_count(xs: list[str], ys: list[str], z: str) -> dict[str, int]:
+    "Checks how many times an item from one column has items in another."
+    result: dict[str, int] = {}
+    i: int = 0
+    for keys in xs:
+        if xs[i] not in result:
+            for key in ys:
+                result[key] = 1
+        else: 
+            for key in ys:
+                if key == z:
+                    result[keys] += 1
+            return result
+    return result
+
+
+def less_than(col: list[str], threshold: str) -> list[bool]:
+    result: list[bool] = []
+    for item in col:
+        result.append(item < threshold)
+
+    return result
+
+
+def masked(col: list[float], mask: list[bool]) -> list[float]:
+    """Takes in a column and list of bool, returns only values where corresponding input is 'True'."""
+    result: list[float] = []
+    for i in range(len(mask)):
+        if mask[i]:
+            result.append(col[i])
 
     return result
